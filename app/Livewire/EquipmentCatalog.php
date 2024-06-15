@@ -11,6 +11,20 @@ class EquipmentCatalog extends Component
     use WithPagination;
     public $search = '';
     public $filterType = '';
+
+    public $cart;
+
+    public function mount()
+    {
+        $this->cart = session()->get('cart', []);
+    }
+
+    public function addToCart($productId)
+    {
+        $this->cart[$productId] = isset($this->cart[$productId]) ? $this->cart[$productId] + 1 : 1;
+        session()->put('cart', $this->cart);
+    }
+
     public function render()
     {
         $equipmentQuery = Equipment::query();

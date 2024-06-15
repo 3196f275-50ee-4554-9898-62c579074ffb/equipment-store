@@ -16,6 +16,7 @@
 
         <!-- Styles -->
         @livewireStyles
+        <link rel="stylesheet" href="{{ asset('vendor/notify/notify.css') }}">
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -33,7 +34,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class="w-full">
+            <main class="w-full my-4">
                 {{ $slot }}
             </main>
         </div>
@@ -41,5 +42,7 @@
         @stack('modals')
 
         @livewireScripts
+        @notify_js
+        @notify_render
     </body>
 </html>

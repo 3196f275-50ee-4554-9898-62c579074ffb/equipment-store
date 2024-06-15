@@ -20,6 +20,10 @@
                         <x-nav-link href="{{ route('equipment.create') }}" :active="request()->routeIs('equipment.create')">
                             Регистрация техники
                         </x-nav-link>
+
+                        <x-nav-link href="{{ route('cart') }}" :active="request()->routeIs('cart')">
+                            Карзина
+                        </x-nav-link>
                     </div>
                 </div>
 
@@ -152,6 +156,10 @@
 
                 <x-responsive-nav-link href="{{ route('equipment.create') }}" :active="request()->routeIs('equipment.create')">
                     Регистрация техники
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link href="{{ route('cart') }}" :active="request()->routeIs('cart')">
+                    Карзина
                 </x-responsive-nav-link>
             </div>
 
